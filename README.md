@@ -1,8 +1,8 @@
 # Tmux LAN status
 
-Tmux plugin that enables displaying status and IP for your workstation.
+Tmux plugin that enables displaying LAN status and IP for your workstation.
 
-Inspider by ![https://github.com/tmux-plugins/tmux-online-status](https://github.com/tmux-plugins/tmux-online-status)
+Inspider by [https://github.com/tmux-plugins/tmux-online-status](https://github.com/tmux-plugins/tmux-online-status)
 
 Introduces a new `#{lan_status}` format.
 
@@ -56,7 +56,7 @@ Reload TMUX environment:
 
 ### Limitations
 
-LAN status icon most likely won't be instant. The duration depends on the `status-interval` Tmux option. So, it might take anywhere between 5 and 60 seconds for online status icon to change.
+LAN status icon most likely won't be instant. The duration depends on the `status-interval` Tmux option. So, it might take anywhere between 5 and 60 seconds for LAN status icon to change.
 
 Set `status-interval` to a low number to make this faster, example:
 
