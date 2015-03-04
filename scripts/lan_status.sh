@@ -8,7 +8,7 @@ online_lan_option_string="@online_lan_icon"
 offline_lan_option_string="@offline_lan_icon"
 
 online_lan_icon_osx="ⓛ "
-online_lan_icon="LAN IP "
+online_lan_icon="LAN: "
 offline_lan_icon_osx="⨂ "
 offline_lan_icon="NO LAN IP "
 
