@@ -4,16 +4,27 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source "$CURRENT_DIR/helpers.sh"
 
-lan_option_string="@lan_icon"
+online_lan_option_string="@online_lan_icon"
+offline_lan_option_string="@offline_lan_icon"
 
-lan_icon_osx="ⓛ "
-lan_icon="LAN IP "
+online_lan_icon_osx="ⓛ "
+online_lan_icon="LAN IP "
+offline_lan_icon_osx="⨂ "
+offline_lan_icon="NO LAN IP "
 
-lan_icon_default() {
+online_lan_icon_default() {
 	if is_osx; then
-		echo "$lan_icon_osx"
+		echo "$online_lan_icon_osx"
 	else
-		echo "$lan_icon"
+		echo "$online_lan_icon"
+	fi
+}
+
+offline_lan_icon_default() {
+	if is_osx; then
+		echo "$offline_lan_icon_osx"
+	else
+		echo "$offline_lan_icon"
 	fi
 }
 
@@ -51,7 +62,11 @@ ip_lan_status() {
 print_lan_status() {
 	# spacer fixes weird emoji spacing
 	local spacer=" "
-  printf "$(get_tmux_option "$lan_option_string" "$(lan_icon_default)")$spacer$(ip_lan_status)"
+  if [ $(ip_lan_status) ]; then
+    printf "$(get_tmux_option "$online_lan_option_string" "$(online_lan_icon_default)")$spacer$(ip_lan_status)"
+  else
+    printf "$(get_tmux_option "$offline_lan_option_string" "$(offline_lan_icon_default)")$spacer"
+  fi
 }
 
 main() {

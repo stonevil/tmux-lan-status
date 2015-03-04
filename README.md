@@ -22,7 +22,8 @@ Here's the example in `.tmux.conf`:
 If the icons don't display well on your machine you can change them in
 `.tmux.conf`:
 
-    set -g @lan_icon "ok"
+    set -g @online_lan_icon "ok"
+    set -g @offline_lan_icon "crap!"
 
 ### Installation with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) (recommended)
 
